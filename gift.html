@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html style="font-size: 55.3333px;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>我的奖品</title>
+  <link rel="stylesheet" href="./static/phone1.css">
+  <link rel="stylesheet" href="./static/layui.css">
+  <style>
+    body {
+      font-size: 0.26rem;
+      background: #FAFAFA;
+    }
+
+    li {
+      margin-bottom: 0.18rem;
+      box-sizing: border-box;
+      padding: 0.2rem;
+      background: white;
+    }
+
+    .lyx-app-li-d {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .lyx-app-p1 {
+      margin-top: 0.2rem;
+      font-size: 0.30rem;
+      font-weight: 500;
+      color: #323B5A;
+    }
+
+    .lyx-app-p2 {
+      margin-top: 0.2rem;
+      font-size: 0.30rem;
+      font-weight: 400;
+      color: #C3C5CD;
+    }
+
+    .lyx-ylq {
+      font-size: 0.30rem;
+      font-weight: 400;
+      color: #C3C5CD;
+    }
+
+    .lyx-lq {
+      font-size: 0.3rem;
+      font-weight: 400;
+      color: #FF4D38;
+    }
+
+    button {
+      width: 100%;
+      height: 0.88rem;
+      background: #757DFF;
+      font-size: 0.30rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 0.88rem;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+    }
+
+    [v-cloak] {
+      opacity: 0;
+    }
+
+    .lyx-wsj-p {
+      font-size: 0.36rem;
+      font-weight: 400;
+      color: #999999;
+      text-align: center;
+    }
+
+    .yihximg {
+      position: absolute;
+      right: 2%;
+      top: 10%;
+      height: 80%;
+    }
+
+    #showCode {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.53);
+      position: absolute;
+      z-index: 2;
+    }
+
+    .closecha {
+      text-align: right;
+      height: 0.8rem;
+      padding: 0.2rem;
+      box-sizing: border-box;
+    }
+
+    .closecha img {
+      height: 80%;
+      margin-right: 0.2rem;
+    }
+
+    .item-container {
+      display: flex;
+      align-items: center;
+      padding: 0.2rem;
+      background: white;
+      gap: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .item-title {
+      margin-bottom: 0.13rem;
+    }
+
+    .item-info span {
+      font-size: 0.26rem;
+      color: #C3C5CD;
+    }
+
+    #showCode {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="app">
+    <div id="showCode">
+      <div
+        style="background-color: rgb(255, 255, 255); width: 65%; position: absolute; z-index: 9; top: 42%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="closecha"><img @click="hideCode" src="./static/hexhcha.png" alt="" style="height: 80%;"></div>
+        <p style="color: rgb(122, 124, 128);">请向商家展示核销码</p>
+        <p style="font-size: 0.8rem; font-weight: 600;"></p> <img src="./static/qr.png"
+          style="width: 100%;height: 300px;">
+      </div>
+    </div>
+    <div id="gift-list" style="display: none;">
+      <div class="item-container" @click="showCode">
+        <img src="./static/2888759286200583.png" alt="" style="width: 2rem; height: 1.2rem;">
+        <div>
+          <div id="item-title" class="item-title">{{prizeName}}</div>
+          <div class="item-info">
+            <span>中奖时间：</span>
+            <span id="info-time">{{time}}</span>
+          </div>
+        </div>
+        <div>点击查看</div>
+      </div>
+    </div>
+    <div id="nullPrize" style="text-align: center; margin-top: 50%;display: none;"><img src="./static/lyx-wsj.png"
+        alt="">
+      <p class="lyx-wsj-p">无数据</p>
+    </div>
+    <div style="height: 0.88rem;"></div> <button @click="towx">返回</button>
+  </div>
+
+  <script src="./static/jquery.js.下载"></script>
+  <script src="./static/vue.js.下载"></script>
+  <script src="./static/noreset.js.下载"></script>
+
+  <script>
+    if (!window.localStorage) {
+      alert("浏览器不支持localstorage");
+    } else {
+      var storage = window.localStorage;
+    }
+    var rand = 'yhwbhi2b';
+    var vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          prize: [],
+          isShowCode: false,
+          domain: 'https://picture.qmwhd.com',
+          codeImg: '',
+          code: '',
+          time: '',
+          prizeName: '',
+        }
+      },
+      mounted() {
+        var that = this;
+        that.initPrize();
+      },
+      methods: {
+        // 跳转抽奖页
+        towx() {
+          window.location.href = "./index.html";
+        },
+        // 初始化
+        initPrize() {
+          var that = this;
+          that.prizeName = null;
+          that.drawTime = null;
+          that.receiveTime = null;
+          that.receiveStatus = null;
+          that.showPrize();
+        },
+        // 显示抽中奖品列表
+        showPrize() {
+          const that = this;
+          const info = JSON.parse(storage.getItem('info'));
+          console.log(info)
+          if (!info || info == 'null') {
+            $('#nullPrize').show()
+            $('#gift-list').hide()
+          }
+          else {
+            $('#item-title').text(info.prizeName);
+            $('#info-time').text(info.time);
+            this.time = new Date(info.drawTimes).toLocaleString();
+            this.prizeName = info.prizeName;
+            $('#gift-list').show()
+            $('#nullPrize').hide()
+          }
+        },
+        showCode(img, code) {
+          setTimeout(() => {
+            this.isShowCode = true
+          }, 200)
+          $('#showCode').show()
+        },
+        hideCode() {
+          this.isShowCode = false
+          this.codeImg = ''
+          this.code = ''
+          $('#showCode').hide()
+        },
+        golq(prizeId) {
+          window.location.href = "./index.html" + prizeId + "&rand=" + rand;
+        },
+        gourl(url) {
+          window.location.href = url;
+        }
+      },
+    });
+  </script>
+  <div data-demoway-ignore="true" style="bottom: 20px; left: 20px;"><template shadowrootmode="closed">
+      <link rel="stylesheet" href="chrome-extension://amcccnldajjnngnaoinemnaloklogjak/assets/style-CKSY5OTM.css">
+      <!----><!----><!----><!----><!---->
+      <div style="display: none;"><iframe class="intermediary" title="intermediary" allowtransparency="true"
+          src="chrome-extension://amcccnldajjnngnaoinemnaloklogjak/src/pages/intermediary/index.html?task_list_border=true"></iframe>
+      </div><!----><!---->
+    </template></div>
+</body>
+
+</html>

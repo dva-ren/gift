@@ -427,7 +427,7 @@
     <div id="touming" style="display: none;"></div>
     <div class="lyx-top"
       style="background-image: url(&quot;https://picture.qmwhd.com/permanent/20250325/yhwbhi2b/9134086909840407.png&quot;);">
-      <div class="lyx-top-circle">
+      <div class="lyx-top-circle" @click="toMyPrize">
         <p>我的奖品</p>
       </div>
       <p class="lyx-top-p1">&nbsp;</p>
@@ -542,7 +542,7 @@
         <p
           style="font-size: 0.26rem; font-weight: 500; color: rgb(153, 153, 153); line-height: 54px; text-align: center;">
           获得 <span id="prizenamep"></span></p>
-      </div> <button class="lyx-wx-btn">领取奖品</button>
+      </div> <button class="lyx-wx-btn" @click="toMyPrize">领取奖品</button>
     </div>
     <div id="xiexie" class="lyx-wzj" style="display: none;">
       <div><img src="./static/lyx-wzj.png" alt=""
@@ -643,7 +643,7 @@
           },
           // 我的奖品页
           toMyPrize() {
-            window.location.href = "/weixin/draw/goMyPrize?rand=" + rand;
+            window.location.href = "./gift.html";
           },
           // golq() {
           //   if (receivetype == 1) {
