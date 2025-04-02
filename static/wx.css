@@ -1,0 +1,280 @@
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.lyx-top {
+    width: 7.5rem;
+    height: 4rem;
+    background-image: url('../../assets/img/lyx-banner.jpg');
+    background-size: contain;
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.lyx-top-circle {
+    width: 1.05rem;
+    height: 1.05rem;
+    background: rgba(19, 19, 19, 0.4);
+    border-radius: 50%;
+    position: absolute;
+    top: 0.24rem;
+    right: 0.4rem;
+    font-size: 0.33rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 0.45rem;
+    padding: 0.1rem;
+}
+.lyx-top-circle p{
+    font-size: 0.33rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 0.45rem;
+    padding: 0.1rem;
+}
+
+.lyx-top-p1 {
+    padding-top: 1.56rem;
+    font-size: 1.02rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 42px;
+    text-align: center;
+}
+
+.lyx-top-p2 {
+    width: 3.35rem;
+    height: 0.60rem;
+    background: rgba(19, 19, 19, 0.3);
+    border-radius: 0.3rem;
+    font-size: 0.26rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 0.6rem;
+    margin-left: 1.92rem;
+    margin-top: 0.35rem;
+}
+
+.lyx-top-p2 span {
+    font-size: 0.26rem;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.lyx-neck {
+    margin: 0.19rem auto;
+    width: 6.39rem;
+    /*height: 0.70rem;*/
+    background: #FFE294;
+    border-radius: 0.35rem;
+    display: flex;
+}
+
+.lyx-neck img {
+    width: 0.35rem;
+    height: 0.45rem;
+    margin-left: 0.55rem;
+    margin-top: -0.05rem;
+}
+
+.lyx-neck p {
+    font-size: 0.26rem;
+    font-weight: 500;
+    color: #FF9C00;
+    line-height: 0.7rem;
+    text-align: center;
+}
+
+.lyx-neck span {
+    font-size: 0.26rem;
+    font-weight: 500;
+    color: #FF9C00;
+    line-height: 0.7rem;
+    text-align: center;
+}
+
+.lyx-center {
+    width: 6.70rem;
+    height: 6.9rem;
+    background-image: url('./cjbanneer.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    box-sizing: border-box;
+    padding: 0.1rem 0.25rem;
+}
+
+.lyx-center-i {
+    width: 1.72rem;
+    height: 1.72rem;
+    background: #FCFFFA;
+    border-radius: 0.18rem;
+    text-align: center;
+}
+
+.lyx-center-i img {
+    width: 0.58rem;
+    height: 0.58rem;
+    margin-top: 0.38rem;
+}
+
+.lyx-center button {
+    width: 1.72rem;
+    height: 1.72rem;
+    background: #FFC000;
+    border-radius: 0.18rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    position: relative;
+    top: 2.4rem;
+    left: 2.2rem;
+    line-height: 0.72rem;
+}
+
+.light .gift_div {
+    width: 100%;
+    height: 6.4rem;
+    position: relative;
+    padding: .05rem .5%;
+    box-sizing: border-box;
+    /* margin-top: .2rem; */
+}
+
+.gift_div > div {
+    position: absolute;
+    margin: 0.3rem 0.25rem;
+}
+
+.gift2,
+.gift6 {
+    left: 31.5%;
+}
+
+.gift3,
+.gift4,
+.gift5 {
+    right: 1.6%;
+}
+
+.gift4,
+.gift8,
+.start {
+    top: 2.15rem;
+}
+
+.gift5,
+.gift6,
+.gift7 {
+    bottom: .05rem;
+}
+
+.gift_div .start {
+    background: #FDB827;
+    text-align: center;
+    line-height: 2rem;
+    /* color: #FF001F; */
+}
+
+.red {
+    color: red;
+}
+
+.num {
+    text-align: center;
+    font-size: .32rem;
+    line-height: .6rem;
+    /* background: #E6EFEC; */
+    border-radius: .6rem;
+}
+
+
+.lyx-lt {
+    width: 6rem;
+    margin: -0.35rem 0 -0.9rem 0.75rem;
+}
+
+.lyx-bottom {
+    width: 6.89rem;
+    /*height: 2.77rem;*/
+    background: #FFFFFF;
+    box-shadow: -0.01rem 0.02rem 0.07rem 0 rgba(88, 87, 87, 0.2);
+    border-radius: 0.10rem;
+    margin: 0.35rem auto;
+}
+
+.lyx-bottom-p1 {
+    font-size: 0.34rem;
+    font-weight: 500;
+    color: #333333;
+    padding: 0.5rem 0 0.3rem 0;
+    text-align: center;
+}
+
+.lyx-bottom-p2 {
+    font-size: 0.24rem;
+    font-weight: 400;
+    color: #4C4B4B;
+    line-height: 0.60rem;
+    margin-left: 1.5rem;
+}
+
+#touming {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 9999;
+}
+
+.lyx-cj {
+    position: fixed;
+    top: 3.2rem;
+    left: 18%;
+    z-index: 99999;
+    background: #ffffff;
+    width: 4.78rem;
+    height: 5.1rem;
+    border-radius: 0.14rem;
+    align-items: center;
+}
+.lyx-wzj {
+    width: 5.50rem;
+    height: 2.96rem;
+    background: #FFFFFF;
+    border-radius: 0.10rem;
+    position: fixed;
+    top: 3.4rem;
+    left: 13%;
+    z-index: 99999;
+    align-items: center;
+}
+#prizenamep span{
+    font-size: 0.26rem;
+    font-weight: 500;
+    color: #999999;
+
+}
+.lyx-wx-btn{
+    width: 3.40rem;
+    height: 0.88rem;
+    background: #757DFF;
+    border-radius: 0.1rem;
+    font-size: 0.30rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 0.88rem;
+    position: absolute;
+    bottom: 0.35rem;
+    left: 16%;
+}
